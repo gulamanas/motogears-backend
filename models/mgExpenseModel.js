@@ -17,7 +17,7 @@ const mgExpense = mongoose.Schema({
     type: String,
   },
   expenseParticular: {
-    type: Number,
+    type: String,
     required: true,
   },
   paidAmount: {
