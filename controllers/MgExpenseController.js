@@ -84,6 +84,14 @@ const updateExpense = asyncHandler(async (req, res) => {
   res.status(200).json(expenses);
 });
 
+const deleteExpense = asyncHandler(async (req, res) => {
+  const id = req.params.id;
+
+  const deletedExpense = await MgExpense.deleteOne({ _id: id });
+
+  res.json(deletedExpense);
+});
+
 const getSingleImage = asyncHandler(async (req, res) => {
   const id = req.params.id;
 
@@ -102,5 +110,6 @@ module.exports = {
   getExpenses,
   createExpense,
   updateExpense,
+  deleteExpense,
   getSingleImage,
 };
